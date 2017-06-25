@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #c {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas width="800" height="600" id="c"></canvas>
+<script src="js/bird.js"></script>
+<script src="js/sky.js"></script>
+<script src="js/land.js"></script>
+<script src="js/pipe.js"></script>
+
+<script>
+
+
+    var cas = document.querySelector("#c");
+    var ctx = cas.getContext("2d");
+
+//多图片加载事件  ====》所有的图片加载完成的在执行事件
+    function loadImg(imgArr, callback) {
+        var count = 0;
+        var imgList = {};
+        for (var i = 0; i < imgArr.length; i++) {
+            var img = new Image();
+            imgList[imgArr[i]] = img;
+            img.src = "imgs/" + imgArr[i] + ".png";
+            img.onload = function () {
+                count++;
+                if (count >= imgArr.length) {
+                    callback(imgList);
+                }
+            }
+        }
+    }
+    var imgs = ["birds", "sky", 'land','pipe2','pipe1'];
+    loadImg(imgs, function (imgList) {
+        var birdImg = imgList["birds"];
+        var skyImg = imgList["sky"];
+        var landImg = imgList['land'];
+        var roles=[];
+
+        //天空
+        var s1 = new Sky({
+            img: skyImg,
+            ctx: ctx,
+            index: 0
+        });
+        roles.push(s1);
+        var s2 = new Sky({
+            img: skyImg,
+            ctx: ctx,
+            index: 1
+        });
+        roles.push(s2);
+        for(var i=0;i<4;i++){
+            var land = new Land({
+                img: landImg,
+                ctx: ctx,
+                i: i
+            });
+            roles.push(land);
+        }
+        //障碍物
+       for(var i=0;i<6;i++) {
+           var pipe = new Pipe({
+               x: 300 + imgList['pipe2'].width * 3*i,
+               ctx: ctx,
+               imgT: imgList['pipe2'],
+               imgB: imgList['pipe1']
+           });
+           roles.push(pipe);
+       }
+        //小鸟
+        var b = new Bird({
+            ctx: ctx,
+            x: 100,
+            y: 100,
+            img: birdImg,
+            birdIndex: 0
+        });
+        roles.push(b);
+
+        var currentTime = new Date();
+        var lastTime = new Date();
+        //帧动画
+        function render() {
+            //时间的计算
+            //获取当前帧的时间
+            currentTime = new Date();
+            //时间差= 当前帧的时间 - 上一帧的时间
+            var deltaTime = currentTime - lastTime;
+            //将当前帧的事件设置为lastTime
+            lastTime = currentTime;
+
+
+            ctx.clearRect(0, 0, cas.width, cas.height);
+            this.ctx.beginPath();
+            roles.forEach(function(v){
+                v.draw(deltaTime);
+
+            });
+            if(b.y+ birdImg.height/2>0&& b.y + birdImg.height/2<cas.height-landImg.height&& !ctx.isPointInPath(b.x+ b.w/2, b.y+ b.h/2)){
+                requestAnimationFrame(render);
+            }
+        }
+
+        render();
+
+
+        cas.onclick = function () {
+            b.speed = -0.3;
+        }
+    });
+
+</script>
+</body>
+</html>
