@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>react配置 | Hexo</title>
+  <title>react的生命钩子 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="react的配置安装webpack npm i webpack -S安装处理样式的loader安装处理高级Js的loader安装处理html的plugin1. 一个插件可以压缩html代码 安装react">
+  <meta name="description" content="react的生命钩子  只掉调用一次 componentWillMount  页面初始化前调用   componentDidMount  页面初始化后调用     可以调用多少 componentWillReceiveProps  接收到新的prop时候调用  比如匹配路由的时候在这个生命钩子里面发ajax请求   shouldComponentUpdate  接收到新的prop和state时候调">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react配置">
-<meta property="og:url" content="http://yoursite.com/2017/08/07/react配置/index.html">
+<meta property="og:title" content="react的生命钩子">
+<meta property="og:url" content="http://yoursite.com/2017/08/08/react的生命钩子/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="react的配置安装webpack npm i webpack -S安装处理样式的loader安装处理高级Js的loader安装处理html的plugin1. 一个插件可以压缩html代码 安装react">
-<meta property="og:updated_time" content="2017-08-08T10:53:06.186Z">
+<meta property="og:description" content="react的生命钩子  只掉调用一次 componentWillMount  页面初始化前调用   componentDidMount  页面初始化后调用     可以调用多少 componentWillReceiveProps  接收到新的prop时候调用  比如匹配路由的时候在这个生命钩子里面发ajax请求   shouldComponentUpdate  接收到新的prop和state时候调">
+<meta property="og:updated_time" content="2017-08-08T13:20:59.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react配置">
-<meta name="twitter:description" content="react的配置安装webpack npm i webpack -S安装处理样式的loader安装处理高级Js的loader安装处理html的plugin1. 一个插件可以压缩html代码 安装react">
+<meta name="twitter:title" content="react的生命钩子">
+<meta name="twitter:description" content="react的生命钩子  只掉调用一次 componentWillMount  页面初始化前调用   componentDidMount  页面初始化后调用     可以调用多少 componentWillReceiveProps  接收到新的prop时候调用  比如匹配路由的时候在这个生命钩子里面发ajax请求   shouldComponentUpdate  接收到新的prop和state时候调">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="w-react配置" class="article article-type-w" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-react的生命钩子" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/08/07/react配置/" class="article-date">
-  <time datetime="2017-08-07T13:46:30.000Z" itemprop="datePublished">2017-08-07</time>
+    <a href="/2017/08/08/react的生命钩子/" class="article-date">
+  <time datetime="2017-08-08T12:52:00.000Z" itemprop="datePublished">2017-08-08</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      react配置
+      react的生命钩子
     </h1>
   
 
@@ -85,12 +85,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="react的配置"><a href="#react的配置" class="headerlink" title="react的配置"></a>react的配置</h1><h3 id="安装webpack-npm-i-webpack-S"><a href="#安装webpack-npm-i-webpack-S" class="headerlink" title="安装webpack npm i webpack -S"></a>安装webpack npm i webpack -S</h3><h3 id="安装处理样式的loader"><a href="#安装处理样式的loader" class="headerlink" title="安装处理样式的loader"></a>安装处理样式的loader</h3><h3 id="安装处理高级Js的loader"><a href="#安装处理高级Js的loader" class="headerlink" title="安装处理高级Js的loader"></a>安装处理高级Js的loader</h3><h3 id="安装处理html的plugin"><a href="#安装处理html的plugin" class="headerlink" title="安装处理html的plugin"></a>安装处理html的plugin</h3><pre><code>1. 一个插件可以压缩html代码
-</code></pre><h3 id="安装react"><a href="#安装react" class="headerlink" title="安装react"></a>安装react</h3>
+        <h1 id="react的生命钩子"><a href="#react的生命钩子" class="headerlink" title="react的生命钩子"></a>react的生命钩子</h1><ul>
+<li><ul>
+<li>只掉调用一次<ol>
+<li>componentWillMount <ul>
+<li>页面初始化前调用</li>
+</ul>
+</li>
+<li>componentDidMount <ul>
+<li>页面初始化后调用</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>可以调用多少<ol>
+<li>componentWillReceiveProps <ul>
+<li>接收到新的prop时候调用 </li>
+<li>比如匹配路由的时候在这个生命钩子里面发ajax请求</li>
+</ul>
+</li>
+<li>shouldComponentUpdate <ul>
+<li>接收到新的prop和state时候调用</li>
+</ul>
+</li>
+<li>componentWillUpdate<ul>
+<li>接收到新的prop和state,并且在render之前调用</li>
+</ul>
+</li>
+<li>componentDidUpdate <ul>
+<li>更新后立即调用</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>调用一次<ol>
+<li>componentWillUnmount<ul>
+<li>移除的时候调用</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/07/react配置/" data-id="cj63m6ucp0003modf6e866kak" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cj63m6ucm0002modf06xhpd47" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -99,19 +141,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/08/08/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          webpack
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/01/事件兼容问题/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/08/08/webpack/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">事件兼容问题</div>
+      <div class="article-nav-title">webpack</div>
     </a>
   
 </nav>
