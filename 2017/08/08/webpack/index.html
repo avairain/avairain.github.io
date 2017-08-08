@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webpack | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="webpackwebpack的安装 npm i webpack -g  全局安装 npm i webpack -D  安装到项目中webpack.config.js 配置文件配置文件里面需要使用模块化   必须有 entry  入口 必须有 output 出口 123456789module.exports=&amp;#123;    entry:&amp;#123;        app:&apos;./src/main">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2017/08/08/webpack/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webpackwebpack的安装 npm i webpack -g  全局安装 npm i webpack -D  安装到项目中webpack.config.js 配置文件配置文件里面需要使用模块化   必须有 entry  入口 必须有 output 出口 123456789module.exports=&amp;#123;    entry:&amp;#123;        app:&apos;./src/main">
+<meta property="og:updated_time" content="2017-08-08T08:29:01.852Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="webpackwebpack的安装 npm i webpack -g  全局安装 npm i webpack -D  安装到项目中webpack.config.js 配置文件配置文件里面需要使用模块化   必须有 entry  入口 必须有 output 出口 123456789module.exports=&amp;#123;    entry:&amp;#123;        app:&apos;./src/main">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webpack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/08/webpack/" class="article-date">
+  <time datetime="2017-08-08T01:37:22.000Z" itemprop="datePublished">2017-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><h2 id="webpack的安装"><a href="#webpack的安装" class="headerlink" title="webpack的安装"></a>webpack的安装</h2><ol>
+<li>npm i webpack -g<br>  全局安装</li>
+<li>npm i webpack -D<br>  安装到项目中<h2 id="webpack-config-js-配置文件"><a href="#webpack-config-js-配置文件" class="headerlink" title="webpack.config.js 配置文件"></a>webpack.config.js 配置文件</h2>配置文件里面需要使用模块化</li>
+</ol>
+<ul>
+<li>必须有 entry  入口</li>
+<li><p>必须有 output 出口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports=&#123;</div><div class="line">    <span class="attr">entry</span>:&#123;</div><div class="line">        <span class="attr">app</span>:<span class="string">'./src/main.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">output</span>:&#123;</div><div class="line">        <span class="attr">path</span>:<span class="string">'./dist'</span>,</div><div class="line">        <span class="attr">filename</span>:<span class="string">'bundle.js'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="关于webpack中的loader"><a href="#关于webpack中的loader" class="headerlink" title="关于webpack中的loader"></a>关于webpack中的loader</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//所有的loader都要写在 module节点中</span></div><div class="line"><span class="built_in">module</span>:&#123;</div><div class="line">    <span class="attr">rules</span>:[</div><div class="line">        <span class="comment">//匹配对应的文件后缀  使用对应的loader</span></div><div class="line">        &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'name-loader'</span>,<span class="string">'name-loader'</span>]&#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>处理样式</p>
+<ul>
+<li>css</li>
+</ul>
+<ul>
+<li>npm i style-loader css-loader -D<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>sass</li>
+</ul>
+<ul>
+<li>npm i sass-loader node-sass -D<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.scss$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>]&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>处理css中的路径</li>
+</ul>
+<ul>
+<li>npm i url-loader file-loader -D<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//                           limit:小于1024的图片才会编码 name:文件名字  =  随机生成的哈希值的前七位  -  原文件名字 . 后缀</span></div><div class="line">    &#123;<span class="attr">test</span>:<span class="regexp">/\.(jpg|gif|png|bmp)$/</span>,<span class="attr">use</span>:<span class="string">'url-loader?limit=1024&amp;name=[hash:7]-[name].[ext]'</span>&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>处理html文件</p>
+<ol>
+<li><code>npm i -D html-webpack-plugin</code></li>
+<li>引入 <code>const htmlWebpackPlugin=require(&#39;html-webpack-plugin&#39;)</code></li>
+<li><p>在plugins节点中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> htmlWebpackPlugin(&#123;</div><div class="line">    <span class="attr">template</span>:path.join(__dirname,<span class="string">"./src/main.html"</span>),<span class="comment">//模版</span></div><div class="line">    filename:<span class="string">"index.html"</span> <span class="comment">//文件名</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>压缩 html</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">plugins:[</div><div class="line">    <span class="keyword">new</span> htmlWebpackPlugin(&#123;</div><div class="line">    <span class="attr">template</span>:path.join(__dirname,<span class="string">"./src/main.html"</span>),</div><div class="line">    <span class="attr">filename</span>:<span class="string">"index.html"</span>,</div><div class="line">    <span class="attr">minify</span>:&#123;</div><div class="line">        <span class="attr">collapseWhitespace</span>:<span class="literal">true</span>, <span class="comment">// 合并空白字符</span></div><div class="line">        removeComments:<span class="literal">true</span>, <span class="comment">// 移除注释</span></div><div class="line">        removeAttributeQuotes:<span class="literal">true</span> <span class="comment">// 移除属性上的引号</span></div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>处理高级的JS语法</p>
+<ol>
+<li>安装依赖包<ol>
+<li>npm i babel-core babel-loader baele-plugin-transfrom-runtime -D</li>
+<li>npm i babel-preset-es2015 babel-preset-stage-0  -D</li>
+</ol>
+</li>
+<li><p>配置loader</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">                                <span class="comment">//忽略的文件</span></div><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:<span class="string">'babel-loader'</span>,<span class="attr">exclude</span>:<span class="string">'/node_modules/'</span>&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置 <code>.babellrc</code> 文件<br> 1.项目根目录创建<code>.babelrc</code>文件<br> 2.在文件中写入<br> <code>如果要编译react，就要在presets中加入 &quot;react&quot;</code></p>
+ <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"presets"</span>:[<span class="string">"es2015"</span>,<span class="string">"stage-0"</span>],</div><div class="line">    <span class="attr">"plugins"</span>:[<span class="string">"transform-runtime"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>每次重构就删除dist目录</p>
+<ol>
+<li>npm i clean-webpack-plugin -D</li>
+<li>引入<code>const cleanWebpackPlugin =require(&#39;clean-webpack-plugin&#39;)</code></li>
+<li>plugins 节点中添加 <code>cleanWebpackPlugin([&#39;dist&#39;])</code></li>
+</ol>
+</li>
+<li>分离第三方包</li>
+</ul>
+<ul>
+<li><p>js</p>
+<ol>
+<li><p>entry节点</p>
+<ul>
+<li>先引入 webpack 包<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">entry:&#123;</div><div class="line">    <span class="attr">app</span>:path.join(__dirname,<span class="string">"./src/js/main.js"</span>),</div><div class="line">    <span class="attr">vendors</span>:[<span class="string">'jquery'</span>] <span class="comment">//和plugins节点中那么相同</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>plugins节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimeze.CommonsChunkPlugin(&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">'vendors'</span>,</div><div class="line">    <span class="attr">filename</span>:<span class="string">'vendors.js'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>压缩JS</p>
+<ul>
+<li><ol>
+<li>在plugins节点中添加<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">    <span class="attr">commpress</span>:&#123;</div><div class="line">        <span class="attr">warnings</span>:<span class="literal">false</span>  <span class="comment">//移除警告</span></div><div class="line">    &#125;</div><div class="line">&#125;),</div><div class="line"><span class="keyword">new</span> webpack.DefinePlugin(&#123;</div><div class="line">    <span class="string">'process.env.NODE_ENV'</span>:<span class="string">'"production"'</span>  <span class="comment">//进一步压缩JS 但效果不明显</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>css</p>
+<ol>
+<li><code>npm i -D extract-text-webpack-plugin</code></li>
+<li>导入插件 <code>const extractTextWebpackPlugin=require(&#39;extract-text-webpack-plugin&#39;)</code></li>
+<li><p>module节点下的rules中修改 css 和 sass loader</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:extractTextWebpackPlugin.extract(&#123;</div><div class="line">    <span class="attr">fallback</span>:<span class="string">'style-loader'</span>,</div><div class="line">    <span class="attr">use</span>:<span class="string">'css-loader'</span>,</div><div class="line">    <span class="attr">publicPath</span>:<span class="string">'../'</span>  <span class="comment">//设置公共路径</span></div><div class="line">&#125;),&#125;</div><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.scss$/</span>,<span class="attr">use</span>:extractTextWebpackPlugin.extract(&#123;</div><div class="line">    <span class="attr">fallback</span>:<span class="string">'style-loader'</span>,</div><div class="line">    <span class="attr">use</span>:[<span class="string">'css-loader'</span>,<span class="string">'scss-loader'</span>],</div><div class="line">    <span class="attr">publicPath</span>:<span class="string">'../'</span> <span class="comment">// 设置公共路径</span></div><div class="line">&#125;),&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在plugins节点中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> extractTextWebpackPlugin(<span class="string">'css/styles.css'</span>)   <span class="comment">//抽取css</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>压缩抽取的css</p>
+<ol>
+<li>安装依赖包 <code>npm i optimize-css-assets-webpack-plugin -D</code></li>
+<li><p>导入插件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> optimizeCssAssetsWebpackPlugin = <span class="built_in">require</span>(<span class="string">'optimize-css-assets-webpack-plugin'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>在plugins节点中 <code>new optimizeCssAssetsWebpackPlugin()</code></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/08/webpack/" data-id="cj63brt0e0001h8df7ndcp1p3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/07/react配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">react配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/08/webpack/">webpack</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/07/react配置/">react配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/01/事件兼容问题/">事件兼容问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/01/browser-sync跨域/">browser-sync跨域</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
