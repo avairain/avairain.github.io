@@ -5,16 +5,18 @@
   
   <title>react的生命钩子 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="react的生命钩子  只掉调用一次 componentWillMount  页面初始化前调用   componentDidMount  页面初始化后调用     可以调用多少 componentWillReceiveProps  接收到新的prop时候调用  比如匹配路由的时候在这个生命钩子里面发ajax请求   shouldComponentUpdate  接收到新的prop和state时候调">
+  <meta name="description" content="recat的生命周期 react 的生命周期分为初始化(initial),更新(update)和销毁(unmount) inition阶段会调用的生命钩子- getDefaultProps 获取默认的props - getInitialState 获取初始的state - componentWillMount 组件将要安装 - componentDidMount 组件已经安装 update阶段会调">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react的生命钩子">
 <meta property="og:url" content="http://yoursite.com/2017/08/08/react的生命钩子/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="react的生命钩子  只掉调用一次 componentWillMount  页面初始化前调用   componentDidMount  页面初始化后调用     可以调用多少 componentWillReceiveProps  接收到新的prop时候调用  比如匹配路由的时候在这个生命钩子里面发ajax请求   shouldComponentUpdate  接收到新的prop和state时候调">
-<meta property="og:updated_time" content="2017-08-08T13:20:59.466Z">
+<meta property="og:description" content="recat的生命周期 react 的生命周期分为初始化(initial),更新(update)和销毁(unmount) inition阶段会调用的生命钩子- getDefaultProps 获取默认的props - getInitialState 获取初始的state - componentWillMount 组件将要安装 - componentDidMount 组件已经安装 update阶段会调">
+<meta property="og:image" content="http://yoursite.com/2017/08/08/react的生命钩子/images/React中组件的生命周期.png">
+<meta property="og:updated_time" content="2017-08-14T04:25:01.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react的生命钩子">
-<meta name="twitter:description" content="react的生命钩子  只掉调用一次 componentWillMount  页面初始化前调用   componentDidMount  页面初始化后调用     可以调用多少 componentWillReceiveProps  接收到新的prop时候调用  比如匹配路由的时候在这个生命钩子里面发ajax请求   shouldComponentUpdate  接收到新的prop和state时候调">
+<meta name="twitter:description" content="recat的生命周期 react 的生命周期分为初始化(initial),更新(update)和销毁(unmount) inition阶段会调用的生命钩子- getDefaultProps 获取默认的props - getInitialState 获取初始的state - componentWillMount 组件将要安装 - componentDidMount 组件已经安装 update阶段会调">
+<meta name="twitter:image" content="http://yoursite.com/2017/08/08/react的生命钩子/images/React中组件的生命周期.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -52,9 +54,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -85,46 +87,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="react的生命钩子"><a href="#react的生命钩子" class="headerlink" title="react的生命钩子"></a>react的生命钩子</h1><ul>
-<li><ul>
-<li>只掉调用一次<ol>
-<li>componentWillMount <ul>
-<li>页面初始化前调用</li>
+        <h1 id="recat的生命周期"><a href="#recat的生命周期" class="headerlink" title="recat的生命周期"></a>recat的生命周期</h1><p> react 的生命周期分为初始化(initial),更新(update)和销毁(unmount)</p>
+<h2 id="inition阶段会调用的生命钩子"><a href="#inition阶段会调用的生命钩子" class="headerlink" title="inition阶段会调用的生命钩子"></a>inition阶段会调用的生命钩子</h2><pre><code>- getDefaultProps
+获取默认的props
+- getInitialState
+获取初始的state
+- componentWillMount
+组件将要安装
+- componentDidMount
+组件已经安装
+</code></pre><h2 id="update阶段会调用的生命钩子"><a href="#update阶段会调用的生命钩子" class="headerlink" title="update阶段会调用的生命钩子"></a>update阶段会调用的生命钩子</h2><ul>
+<li>props发生改变<ul>
+<li>componentWillReceiveProps<br>组件将要接受props</li>
+<li>shouldComponentUpdate<br>组件是否要更新<pre><code class="js"><span class="comment">//shouldCompontUpdate钩子调用后返回一个boolean     </span>
+<span class="comment">//  ====&gt; false 继续运行</span>
+<span class="comment">//  ====&gt; true  执行渲染操作</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>渲染操作</li>
+</ul>
+<ul>
+<li>componentWillUpdate<br>组件将要更新</li>
+<li>componentDidUndate<br>组件已经更新</li>
+<li>运行</li>
 </ul>
 </li>
-<li>componentDidMount <ul>
-<li>页面初始化后调用</li>
+<li>state发生改变<ul>
+<li>shouldComponentUpdate<br>组件是否要更新<pre><code class="js"><span class="comment">//shouldCompontUpdate钩子调用后返回一个boolean     </span>
+<span class="comment">//  ====&gt; false 继续运行</span>
+<span class="comment">//  ====&gt; true  执行渲染操作</span>
+</code></pre>
+</li>
 </ul>
-</li>
-</ol>
-</li>
-<li>可以调用多少<ol>
-<li>componentWillReceiveProps <ul>
-<li>接收到新的prop时候调用 </li>
-<li>比如匹配路由的时候在这个生命钩子里面发ajax请求</li>
+<ul>
+<li>渲染操作</li>
 </ul>
-</li>
-<li>shouldComponentUpdate <ul>
-<li>接收到新的prop和state时候调用</li>
-</ul>
-</li>
-<li>componentWillUpdate<ul>
-<li>接收到新的prop和state,并且在render之前调用</li>
-</ul>
-</li>
-<li>componentDidUpdate <ul>
-<li>更新后立即调用</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>调用一次<ol>
-<li>componentWillUnmount<ul>
-<li>移除的时候调用</li>
-</ul>
-</li>
-</ol>
-</li>
+<ul>
+<li>componentWillUpdate<br>组件将要更新</li>
+<li>componentDidUndate<br>组件已经更新<br><img src="./images/React中组件的生命周期.png" alt="react的生命周期"></li>
 </ul>
 </li>
 </ul>
@@ -132,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cj63m6ucm0002modf06xhpd47" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cj63m6ucm0002modf06xhpd47" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,7 +145,7 @@
   
   
     <a href="/2017/08/08/webpack/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">webpack</div>
     </a>
   
@@ -176,7 +178,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -213,7 +215,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
