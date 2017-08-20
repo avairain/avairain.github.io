@@ -61,6 +61,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ES6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/20/ES6/" class="article-date">
+  <time datetime="2017-08-20T08:22:49.000Z" itemprop="datePublished">2017-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/20/ES6/">ES6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="class-类"><a href="#class-类" class="headerlink" title="class 类"></a>class 类</h1><h2 id="一个构造函数在与关键字连用的时候就称之为类"><a href="#一个构造函数在与关键字连用的时候就称之为类" class="headerlink" title="一个构造函数在与关键字连用的时候就称之为类"></a>一个构造函数在与关键字连用的时候就称之为类</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="comment">//定义属性</span></div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">       <span class="keyword">this</span>.body=<span class="string">'四肢和脑袋'</span></div><div class="line">    &#125;</div><div class="line">    eat(a,b)&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.body)</div><div class="line">        <span class="keyword">this</span>.sing()</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'吃东西'</span>)</div><div class="line">    &#125;</div><div class="line">    sing(a,b)&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'sing:"ABC"'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="class-继承"><a href="#class-继承" class="headerlink" title="class 继承"></a>class 继承</h2><h2 id="让一个构造函数拥有另一个构造函数的属性和方法"><a href="#让一个构造函数拥有另一个构造函数的属性和方法" class="headerlink" title="让一个构造函数拥有另一个构造函数的属性和方法"></a>让一个构造函数拥有另一个构造函数的属性和方法</h2> <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">              <span class="comment">//继承    -----让Chinese拥有Person的属性的方法</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(a,b)&#123;</div><div class="line">        <span class="keyword">super</span>(a,b)</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">    &#125;</div><div class="line">    speak()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'speakChinese'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/20/ES6/" data-id="cj6khgffu000014df3zxm2wkq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-react的生命钩子" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/08/08/react的生命钩子/" class="article-date">
@@ -127,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cj63m6ucm0002modf06xhpd47" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cj6khgfio000614dfenmqvz9n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/08/webpack/" data-id="cj63m6ucq0004modf61bbpacr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/08/webpack/" data-id="cj6khgfi3000514df5cyex0ig" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/07/react配置/" data-id="cj63m6ucp0003modf6e866kak" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/07/react配置/" data-id="cj6khgfg1000114dfg6iqzvwf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/01/事件兼容问题/" data-id="cj63m6ucu0005modfymfc3el1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/01/事件兼容问题/" data-id="cj6khgfg7000414dfgoyu1yki" class="article-share-link">Share</a>
       
       
     </footer>
@@ -397,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/01/browser-sync跨域/" data-id="cj63m6ucc0000modf4mgcqn3w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/01/browser-sync跨域/" data-id="cj6khgfg3000214dfkwqay3km" class="article-share-link">Share</a>
       
       
     </footer>
@@ -442,7 +479,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj63m6ucj0001modf8e8yfi9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj6khgfg6000314dfiuuzlo8r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -482,6 +519,10 @@
       <ul>
         
           <li>
+            <a href="/2017/08/20/ES6/">ES6</a>
+          </li>
+        
+          <li>
             <a href="/2017/08/08/react的生命钩子/">react的生命钩子</a>
           </li>
         
@@ -495,10 +536,6 @@
         
           <li>
             <a href="/2017/08/01/事件兼容问题/">事件兼容问题</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/01/browser-sync跨域/">browser-sync跨域</a>
           </li>
         
       </ul>
