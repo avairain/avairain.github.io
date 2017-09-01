@@ -255,7 +255,7 @@
 </ol>
 </li>
 <li><p>配置loader</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">                                <span class="comment">//忽略的文件</span></div><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:<span class="string">'babel-loader'</span>,<span class="attr">exclude</span>:<span class="string">'/node_modules/'</span>&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">                                <span class="comment">//忽略的文件</span></div><div class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:<span class="string">'babel-loader'</span>,<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>配置 <code>.babellrc</code> 文件<br> 1.项目根目录创建<code>.babelrc</code>文件<br> 2.在文件中写入<br> <code>如果要编译react，就要在presets中加入 &quot;react&quot;</code></p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"presets"</span>:[<span class="string">"es2015"</span>,<span class="string">"stage-0"</span>],</div><div class="line">    <span class="attr">"plugins"</span>:[<span class="string">"transform-runtime"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -265,8 +265,8 @@
 <li><p>每次重构就删除dist目录</p>
 <ol>
 <li>npm i clean-webpack-plugin -D</li>
-<li>引入<code>const cleanWebpackPlugin =require(&#39;clean-webpack-plugin&#39;)</code></li>
-<li>plugins 节点中添加 <code>cleanWebpackPlugin([&#39;dist&#39;])</code></li>
+<li>引入<code>const CleanWebpackPlugin =require(&#39;clean-webpack-plugin&#39;)</code></li>
+<li>plugins 节点中添加 <code>new CleanWebpackPlugin([&#39;dist&#39;])</code></li>
 </ol>
 </li>
 <li>分离第三方包</li>
@@ -282,6 +282,7 @@
 </li>
 <li><p>plugins节点</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.optimeze.CommonsChunkPlugin(&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">'vendors'</span>,</div><div class="line">    <span class="attr">filename</span>:<span class="string">'vendors.js'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//分离多个第三方包</span></div><div class="line">     entry:&#123;</div><div class="line">         <span class="attr">app</span>:path.join(__dirname.<span class="string">'./src/js/main.js'</span>)</div><div class="line">         React:[<span class="string">'react'</span>],</div><div class="line">         <span class="attr">ReactDOM</span>:[<span class="string">'react-dom'</span>]</div><div class="line">     &#125;,</div><div class="line">     <span class="attr">output</span>:&#123;</div><div class="line">         <span class="attr">path</span>:path.join(__dirname,<span class="string">'./dist'</span>),</div><div class="line">         <span class="attr">filename</span>:<span class="string">'[name].js'</span></div><div class="line">     &#125;,</div><div class="line">     <span class="attr">plugins</span>:[</div><div class="line">         <span class="keyword">new</span> webpack.optimeze.CommonsChunkPlugin(&#123;</div><div class="line">             <span class="attr">name</span>:[<span class="string">'react'</span>,<span class="string">'react-dom'</span>],</div><div class="line">             <span class="attr">filename</span>:<span class="string">'[name]/[name].js'</span></div><div class="line">         &#125;)</div><div class="line">     ]</div></pre></td></tr></table></figure>
 </li>
 <li><p>压缩JS</p>
 <ul>
