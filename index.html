@@ -61,6 +61,92 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-redux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/30/redux/" class="article-date">
+  <time datetime="2017-11-30T10:59:11.000Z" itemprop="datePublished">2017-11-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/30/redux/">redux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><h2 id="action-containers和reducer"><a href="#action-containers和reducer" class="headerlink" title="action,containers和reducer"></a>action,containers和reducer</h2><ul>
+<li><p>action 主要是数据从应用传到store </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">store.dispatch(action)</div></pre></td></tr></table></figure>
+</li>
+<li><p>containers是组件</p>
+</li>
+</ul>
+<ul>
+<li>与component 不同 component主要是负责UI的展示</li>
+<li>containers 主要是负责逻辑</li>
+</ul>
+<ul>
+<li>reducer 是用来更新state<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> store = createStore(reducer)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
+<li>combineReducers</li>
+</ul>
+<ul>
+<li>将多个reducer 合成一个<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> reducer = combineReducers(&#123;reducer1,reducer2&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>connect (react-redux)</li>
+</ul>
+<ul>
+<li>将包装好的组件连接到Redux<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect()(Component)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect(mapStateToProps,mapDispatchToProps)(Component)</div></pre></td></tr></table></figure>
+<h2 id="FUNCTION"><a href="#FUNCTION" class="headerlink" title="FUNCTION"></a>FUNCTION</h2><ul>
+<li>mapStateToProps </li>
+</ul>
+<ul>
+<li>建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系</li>
+<li>会接受state</li>
+<li>返回一个对象<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mapStateToProps = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      <span class="comment">//    过滤显示的内容  </span></div><div class="line">    todos: getVisibleTodos(state.todos, state.visibilityFilter)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>mapDispatchToProps </li>
+</ul>
+<ul>
+<li>可以是一个函数也可以是一个对象</li>
+<li>用来建立 UI 组件的参数到store.dispatch方法的映射</li>
+<li>会接受dispacth和ownProps<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">//  function</span></div><div class="line"><span class="keyword">const</span> mapDispatchToProps = (</div><div class="line">  dispatch,</div><div class="line">  ownProps</div><div class="line">) =&gt; &#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">onClick</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      dispatch(&#123;</div><div class="line">        <span class="attr">type</span>: <span class="string">'SET_VISIBILITY_FILTER'</span>,</div><div class="line">        <span class="attr">filter</span>: ownProps.filter</div><div class="line">      &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mapDispatchToProps = &#123;</div><div class="line">  <span class="attr">onClick</span>: VALUE</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>===&gt;  component=&gt;actionCreator=&gt;reducer=&gt;component</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/30/redux/" data-id="cjamha2s30002u0dfxjlkmpps" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-react组件通讯" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/09/01/react组件通讯/" class="article-date">
@@ -90,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/01/react组件通讯/" data-id="cjab0pu1a0001ecdfdhtreqc6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/09/01/react组件通讯/" data-id="cjamha2tz0004u0df5btu5fgz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/20/ES6/" data-id="cjab0pu0z0000ecdfiw94fnw9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/20/ES6/" data-id="cjamha2rj0000u0df744sjuy5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cjab0pu1f0005ecdfyct597b4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/08/react的生命钩子/" data-id="cjamha2s50003u0dfd0l4x24f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -362,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/08/webpack/" data-id="cjab0pu1d0003ecdfe0vides0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/08/webpack/" data-id="cjamha2u10005u0dfv808foby" class="article-share-link">Share</a>
       
       
     </footer>
@@ -399,7 +485,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/07/react配置/" data-id="cjab0pu1c0002ecdfoeosm7m0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/07/react配置/" data-id="cjamha2ry0001u0dfq0ls00pj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -438,7 +524,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/01/事件兼容问题/" data-id="cjab0pu1s0006ecdfpa5pgc8v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/01/事件兼容问题/" data-id="cjamha2wc0008u0df0vysje78" class="article-share-link">Share</a>
       
       
     </footer>
@@ -474,7 +560,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/01/browser-sync跨域/" data-id="cjab0pu1t0007ecdfk2zj15vv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/01/browser-sync跨域/" data-id="cjamha2uk0007u0df4yyxalfq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -519,7 +605,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cjab0pu1e0004ecdfrfebo0hs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cjamha2u40006u0df7bwj2tte" class="article-share-link">Share</a>
       
       
     </footer>
@@ -546,7 +632,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
   </div>
 
@@ -557,6 +643,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/11/30/redux/">redux</a>
+          </li>
         
           <li>
             <a href="/2017/09/01/react组件通讯/">react组件通讯</a>
@@ -572,10 +662,6 @@
         
           <li>
             <a href="/2017/08/08/webpack/">webpack</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/07/react配置/">react配置</a>
           </li>
         
       </ul>
